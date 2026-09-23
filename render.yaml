@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: cardo-board-api
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SUPABASE_URL
+        value: https://thgczdlokjrxzakncgwd.supabase.co
+      - key: SUPABASE_ANON_KEY
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRoZ2N6ZGxva2pyeHpha25jZ3dkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk0OTcwMTAsImV4cCI6MjEwNTA3MzAxMH0.dVg7vSUacM9vs8qn3XNC7fK9WaWQbEdlY0l95Arj1FY

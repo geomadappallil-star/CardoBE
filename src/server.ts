@@ -7,6 +7,8 @@ import { productionRoutes } from './routes/production.route.js';
 import { tradeRoutes } from './routes/trade.route.js';
 import { dimensionRoutes } from './routes/dimensions.route.js';
 import { extrapolateRoutes } from './routes/extrapolate.route.js';
+import { visitorRoutes } from './routes/visitor.route.js';
+import { openApiRoutes } from './routes/openapi.route.js';
 
 const fastify = Fastify({ logger: true });
 
@@ -22,6 +24,8 @@ await fastify.register(productionRoutes);
 await fastify.register(tradeRoutes);
 await fastify.register(dimensionRoutes);
 await fastify.register(extrapolateRoutes);
+await fastify.register(visitorRoutes);
+await fastify.register(openApiRoutes);
 
 fastify.get('/health', async () => ({ status: 'ok', time: new Date().toISOString() }));
 
